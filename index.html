@@ -5,6 +5,56 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+     <!--movie task list-->
+      <header class="header">
+        <div>
+          <ul class="nav">
+            <li><img class="logo" src="netflix.png" /></li>
+            <li>Home</li>
+            <li>Tv Shows</li>
+            <li>Movies</li>
+            <li>Recently Added</li>
+            <li>My List</li>
+          </ul>
+        </div>
+  
+        <div class="nav">
+          <img class="avatar" src="avatar.png" />
+        </div>
+      </header>
+      <!-- navigation -->
+      <div class="main">
+     
+         <div class="search-section">
+          Search for your favorite shows
+          <div>
+              <input class="search-box" type="text" placeholder="Search" />
+              <button id="search">Search</button>
+          </div>
+        </div>
+        
+        <div class="movies-section">
+          <div class="movie-card">
+            <div class="movie-image">
+              <img
+                src="https://i.pinimg.com/originals/a2/34/75/a234753b69e3bd27b7f1d448956c38af.jpg"
+                alt="movie"
+              />
+            </div>
+  
+            <h3 class="movie-heading">Breaking Bad</h3>
+            <div class="details">
+              <div class="rating">
+                <img src="https://pngimg.com/d/star_PNG41474.png" height="15"/>
+                <h3>4.6</h3>
+              </div>
+              <p>Crime | Drama</p>
+          </div>
+          <button class="button">Website</button>
+          </div>
+         
+        </div>
+      </div>
         <!--Random Dog Image-->
         <div>
              <h3>Random Dog Image</h3>
@@ -23,6 +73,8 @@
               <div class="c">Error</div>
             </div>
         </div>
+
+
         <script src="API.JS"></script>
     </body>
 </html>
