@@ -42,3 +42,39 @@ document.querySelector(".btn").addEventListener("click",()=>{
   })
 
 })
+// movie task list
+document.querySelector("#search").addEventListener("click",()=>{
+  let mov = document.querySelector(".search-box").value
+  fetch(`https://api.tvmaze.com/search/shows?q=${mov}`)
+  .then((res)=>{
+      return res.json()
+  })
+  .then((data)=>{
+     console.log(data)
+       for(let i = 0; i< data.length;i++){
+       let div1 = document.createElement("div").classList.add("movie-card")
+        document.querySelector(".movies-section").appendChild(div1)
+        let div2 = document.createElement("div").classList.add("movie-image")
+        document.querySelector("movie-image").appendChild(div2)
+        let img = document.createElement("img")
+        img.innerText = data[i].show.image.original
+        img.appendChild(div2)
+        let h3 = document.createElement("h3").classList.add("movie-heading")
+        h3.innerText = data[i].show.name
+        h3.appendChild(div1)
+        let div3 = document.createElement("div").classList.add("details")
+        div3.innerText = data[i].show.details
+        div3.appendChild(div1)
+        let div4 = document.createElement("div").classList.add("rating")
+        div4.appendChild(div3)
+        let image = document.createElement("img")
+        image.innerText = "https://pngimg.com/d/star_PNG41474.png"
+        let h32 = document.createElement("h3")
+        h32.innerText = data[i].show.rating.average
+        let p = document.createElement("p")
+        p.innerText = data[i].show.genres[0,1]
+        p.appendChild(div3)
+        let but = document.createElement("button").classList.add("button")
+      }
+   })
+})
